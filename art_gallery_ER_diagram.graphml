@@ -33,7 +33,7 @@ zip
 country
 birth_city
 birth_country
-style<y:LabelModel>
+art_style<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
