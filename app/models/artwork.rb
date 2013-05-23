@@ -11,10 +11,18 @@ class Artwork < ActiveRecord::Base
           inverse_of: :artwork,
           dependent: :destroy
 
+  has_one :customer,
+          through: :purchase,
+          inverse_of: :artwork
+
   validates_presence_of :art_type
   validates_presence_of :price
   validates_presence_of :creation_date
   validates_presence_of :title
   validates_presence_of :artist_id
   validates_presence_of :on_sale_date
+
+  def purchased?
+    purchase ? true : false
+  end
 end

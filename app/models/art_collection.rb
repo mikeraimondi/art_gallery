@@ -9,4 +9,8 @@ class ArtCollection < ActiveRecord::Base
   has_many :favorite_collections,
            inverse_of: :art_collection,
            dependent: :destroy
+
+  has_many :customers,
+           through: :favorite_collections,
+           inverse_of: :art_collections
 end

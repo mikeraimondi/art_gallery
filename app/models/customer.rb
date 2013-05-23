@@ -16,9 +16,17 @@ class Customer < ActiveRecord::Base
            inverse_of: :customer,
            dependent: :destroy
 
+  has_many :art_collections,
+           through: :favorite_collections,
+           inverse_of: :customers
+
   has_many :purchases,
            inverse_of: :customer,
            dependent: :destroy
+
+  has_many :artworks,
+           through: :purchases,
+           inverse_of: :customer
 
   def total_amount_spent
     total = 0.0
