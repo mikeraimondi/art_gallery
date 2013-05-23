@@ -15,4 +15,8 @@ class Artist < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
+  has_many  :artworks,
+            dependent: :destroy,
+            inverse_of: :artist
+
 end

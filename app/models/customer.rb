@@ -11,6 +11,14 @@ class Customer < ActiveRecord::Base
   validates_format_of :email, with: /@/
 
   validates_uniqueness_of :email
+
+  has_many :favorite_collections,
+           inverse_of: :customer,
+           dependent: :destroy
+
+  has_many :purchases,
+           inverse_of: :customer,
+           dependent: :destroy
   # method on customer that returns total amount spent
   # method on artworks that returns true if purchased, else false 
 end
