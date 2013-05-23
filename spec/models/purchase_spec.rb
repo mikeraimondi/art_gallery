@@ -23,7 +23,7 @@ describe Purchase do
                                         on_sale_date: DateTime.now - 1.weeks,
                                         price: 499.99,
                                         artist_id: artist.id,
-                                        type: 'Painting') }
+                                        art_type: 'Painting') }
 
   let(:valid_purchase) { Purchase.new(  customer_id: customer.id,
                                         artwork_id: artwork.id) }

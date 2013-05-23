@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20130523185834) do
     t.datetime "creation_date",     :null => false
     t.datetime "on_sale_date",      :null => false
     t.float    "price",             :null => false
-    t.string   "type",              :null => false
+    t.string   "art_type",          :null => false
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end

@@ -19,6 +19,14 @@ class Customer < ActiveRecord::Base
   has_many :purchases,
            inverse_of: :customer,
            dependent: :destroy
+
+  def total_amount_spent
+    total = 0.0
+
+    purchases.each { |purchase| total += purchase.artwork.price }
+
+    total.round(2)
+  end
   # method on customer that returns total amount spent
   # method on artworks that returns true if purchased, else false 
 end

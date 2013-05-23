@@ -1,5 +1,5 @@
 class Artwork < ActiveRecord::Base
-  attr_accessible :art_collection_id, :artist_id, :creation_date, :on_sale_date, :price, :type, :title
+  attr_accessible :art_collection_id, :artist_id, :creation_date, :on_sale_date, :price, :art_type, :title
 
   belongs_to  :artist,
               inverse_of: :artworks
@@ -11,7 +11,7 @@ class Artwork < ActiveRecord::Base
           inverse_of: :artwork,
           dependent: :destroy
 
-  validates_presence_of :type
+  validates_presence_of :art_type
   validates_presence_of :price
   validates_presence_of :creation_date
   validates_presence_of :title

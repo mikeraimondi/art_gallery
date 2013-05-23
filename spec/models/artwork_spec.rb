@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Artwork do
 
- let(:artist) {Artist.create(    name: 'Jimmy Joe',
+ let(:artist) {Artist.create(        name: 'Jimmy Joe',
                                     phone: '555-555-5555',
                                     email: 'foo@bar.com',
                                     address_1: '21 Main St',
@@ -21,7 +21,7 @@ describe Artwork do
                                         price: 499.99,
                                         artist_id: artist.id,
                                         art_collection_id: art_collection.id,
-                                        type: 'Painting') }
+                                        art_type: 'Painting') }
 
   it 'accepts a valid artwork' do
     expect(valid_artwork).to be_valid
@@ -51,9 +51,9 @@ describe Artwork do
     expect(invalid_artwork).to_not be_valid
   end
 
-  it 'requires a type' do
+  it 'requires a art_type' do
     invalid_artwork = valid_artwork.dup
-    invalid_artwork.type = nil
+    invalid_artwork.art_type = nil
     expect(invalid_artwork).to_not be_valid
   end
 
