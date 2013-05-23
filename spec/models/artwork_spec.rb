@@ -63,10 +63,4 @@ describe Artwork do
     expect(invalid_artwork).to_not be_valid
   end
 
-  it 'requires an art collection id' do
-    invalid_artwork = valid_artwork.dup
-    invalid_artwork.art_collection_id = nil
-    expect(invalid_artwork).to_not be_valid
-  end
-
 end

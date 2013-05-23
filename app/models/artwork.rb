@@ -4,7 +4,6 @@ class Artwork < ActiveRecord::Base
   belongs_to :artist
   belongs_to :art_collection
 
-  validates_presence_of :art_collection_id
   validates_presence_of :type
   validates_presence_of :price
   validates_presence_of :creation_date
